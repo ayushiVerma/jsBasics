@@ -1,61 +1,71 @@
-// 35. Search Insert Position
+// 66. Plus One
 // Easy
 // Topics
 // Companies
-// Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+// You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
 
-// You must write an algorithm with O(log n) runtime complexity.
+// Increment the large integer by one and return the resulting array of digits.
 
  
 
 // Example 1:
 
-// Input: nums = [1,3,5,6], target = 5
-// Output: 2
+// Input: digits = [1,2,3]
+// Output: [1,2,4]
+// Explanation: The array represents the integer 123.
+// Incrementing by one gives 123 + 1 = 124.
+// Thus, the result should be [1,2,4].
 // Example 2:
 
-// Input: nums = [1,3,5,6], target = 2
-// Output: 1
+// Input: digits = [4,3,2,1]
+// Output: [4,3,2,2]
+// Explanation: The array represents the integer 4321.
+// Incrementing by one gives 4321 + 1 = 4322.
+// Thus, the result should be [4,3,2,2].
 // Example 3:
 
-// Input: nums = [1,3,5,6], target = 7
-// Output: 4
+// Input: digits = [9]
+// Output: [1,0]
+// Explanation: The array represents the integer 9.
+// Incrementing by one gives 9 + 1 = 10.
+// Thus, the result should be [1,0].
  
 
 // Constraints:
 
-// 1 <= nums.length <= 104
-// -104 <= nums[i] <= 104
-// nums contains distinct values sorted in ascending order.
-// -104 <= target <= 104
+// 1 <= digits.length <= 100
+// 0 <= digits[i] <= 9
+// digits does not contain any leading 0's.
+
 
 /**
- * @param {number[]} nums
- * @param {number} target
- * @return {number}
+ * @param {number[]} digits
+ * @return {number[]}
  */
-var searchInsert = function(nums, target) {
-    let index = 0;
-    let p = 0;
-    for(var i = 0; i < nums.length; i++){
-        if(nums[i] === target){
-            return i;
-        }else{
-          
-           if(nums[i] < target){
-            p++;
-            if(p === nums.length){
-                return p;
-            }
-           }else{
-            return p;
-           }
-        }
+var plusOne = function(digits) {
+    let num = '';
+    let arr = [];
+    for(var i = 0; i< digits.length; i++){
+        num = num + digits[i];
     }
+
+    // console.log(',,,',num);
+    // console.log(parseInt(num) + 1);
+    let t = parseInt(num) + 1;
+    arr.push(t);
+    // console.log(arr);
+    let ty = arr[0];
+    console.log(ty);
+    console.log(ty.length);
+    res = [];
+    ty = ty.toString().length;
+    console.log(ty);
+    for(var m = 0; m < ty ; m++){
+        console.log(ty[m]);
+        res.push(ty[m]);
+    }
+    return res;
 };
 
 
-
-console.log(searchInsert([1,3,5,6], 5))
-// console.log(searchInsert([1,3,5,6], 2))
-// console.log(searchInsert([1,3,5,6], 7))
+console.log(plusOne([1,2,3]))
