@@ -1,71 +1,55 @@
-// 66. Plus One
+
+// 1. Two Sum
 // Easy
 // Topics
 // Companies
-// You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
+// Hint
+// Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
-// Increment the large integer by one and return the resulting array of digits.
+// You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+// You can return the answer in any order.
 
  
 
 // Example 1:
 
-// Input: digits = [1,2,3]
-// Output: [1,2,4]
-// Explanation: The array represents the integer 123.
-// Incrementing by one gives 123 + 1 = 124.
-// Thus, the result should be [1,2,4].
+// Input: nums = [2,7,11,15], target = 9
+// Output: [0,1]
+// Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 // Example 2:
 
-// Input: digits = [4,3,2,1]
-// Output: [4,3,2,2]
-// Explanation: The array represents the integer 4321.
-// Incrementing by one gives 4321 + 1 = 4322.
-// Thus, the result should be [4,3,2,2].
+// Input: nums = [3,2,4], target = 6
+// Output: [1,2]
 // Example 3:
 
-// Input: digits = [9]
-// Output: [1,0]
-// Explanation: The array represents the integer 9.
-// Incrementing by one gives 9 + 1 = 10.
-// Thus, the result should be [1,0].
+// Input: nums = [3,3], target = 6
+// Output: [0,1]
  
 
 // Constraints:
 
-// 1 <= digits.length <= 100
-// 0 <= digits[i] <= 9
-// digits does not contain any leading 0's.
-
+// 2 <= nums.length <= 104
+// -109 <= nums[i] <= 109
+// -109 <= target <= 109
+// Only one valid answer exists.
 
 /**
- * @param {number[]} digits
+ * @param {number[]} nums
+ * @param {number} target
  * @return {number[]}
  */
-var plusOne = function(digits) {
-    let num = '';
-    let arr = [];
-    for(var i = 0; i< digits.length; i++){
-        num = num + digits[i];
-    }
+var twoSum = function(nums, target) {
+    for(var i = 0; i < nums.length; i++){
+        const a = nums[i];
 
-    // console.log(',,,',num);
-    // console.log(parseInt(num) + 1);
-    let t = parseInt(num) + 1;
-    arr.push(t);
-    // console.log(arr);
-    let ty = arr[0];
-    console.log(ty);
-    console.log(ty.length);
-    res = [];
-    ty = ty.toString().length;
-    console.log(ty);
-    for(var m = 0; m < ty ; m++){
-        console.log(ty[m]);
-        res.push(ty[m]);
+        for(var j = i+1; j < nums.length; j++){
+            const b = nums[j];
+            if(a + b === target){
+                return [i, j];
+            }
+        }
     }
-    return res;
 };
 
-
-console.log(plusOne([1,2,3]))
+console.log(twoSum([2,7,11,15],9));
