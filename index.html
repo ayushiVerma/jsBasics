@@ -13,6 +13,28 @@
     <!-- <script src="Array/twoPointerApproach.js"></script> -->
     <!-- <script src="test.js"></script>
     <script src="test.js"></script> -->
+
+
+    <script>  
+        var lang="Java";  
+          
+        function lang_name(call)  
+        {  
+          
+            call();  
+        };  
+          
+        var obj={  
+            
+          lang:"JavaScript",  
+          language:function()  
+          {  
+            document.writeln(this.lang+ " is a popular programming language.");  
+          }  
+        };  
+        lang_name(obj.language);  
+        lang_name(obj.language.bind(obj));  
+        </script>  
 </head>
 <body>
     <h1>hello!</h1>
