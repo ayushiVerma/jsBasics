@@ -8,11 +8,38 @@
     <!-- <script src="ques2.js"></script> -->
     <!-- <script src="ques3.js"></script> -->
     <!-- <script src="ques8.js"></script> -->
-    <script src="JS/currying.js"></script>
+    <script src="JS/debounceAndThrottling.js"></script>
+    <!-- <script src="ques9.js"></script> -->
+    <!-- <script src="promises&time/ques1.js"></script> -->
+    <!-- <script src="Array/ques1.js"></script> -->
+    <!-- <script src="Array/twoPointerApproach.js"></script> -->
     <!-- <script src="test.js"></script>
     <script src="test.js"></script> -->
+
+
+    <script>  
+        var lang="Java";  
+          
+        function lang_name(call)  
+        {  
+          
+            call();  
+        };  
+          
+        var obj={  
+            
+          lang:"JavaScript",  
+          language:function()  
+          {  
+            document.writeln(this.lang+ " is a popular programming language.");  
+          }  
+        };  
+        lang_name(obj.language);  
+        lang_name(obj.language.bind(obj));  
+        </script>  
 </head>
 <body>
     <h1>hello!</h1>
+    <a href="/view.html">View</a>
 </body>
 </html>
