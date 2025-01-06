@@ -49,4 +49,40 @@ var isPrime = function(n){
     return true;
 }
 
-console.log(isPrime(11));
+// console.log(isPrime(11));
+
+// -----------------------------------------------------
+// Big-O is O(log n) i.e while loop means linear
+//  but we also have n/2 means it is not directly propotional to n
+var isPowerOfTwo = function(n){
+   if(n < 1){
+    return false;
+   }
+   while(n > 1){
+    if(n%2 !== 0){
+        return false;
+    }
+    n = n/2;
+   }
+   return true;
+}
+
+// console.log(isPowerOfTwo(8)) //true
+// console.log(isPowerOfTwo(0)) //false
+// console.log(isPowerOfTwo(1)) //true
+// console.log(isPowerOfTwo(5)) //false
+
+
+// Big-O is O(1) i.e Constant Complexity :: Highly Optimized solution
+var isPowerOfTwoBitwise = function(n){
+    if(n < 1){
+        return false;
+    }
+
+    return (n & (n-1)) === 0;
+}
+
+// console.log(isPowerOfTwoBitwise(8)) //true
+// console.log(isPowerOfTwoBitwise(0)) //false
+// console.log(isPowerOfTwoBitwise(1)) //true
+// console.log(isPowerOfTwoBitwise(5)) //false
